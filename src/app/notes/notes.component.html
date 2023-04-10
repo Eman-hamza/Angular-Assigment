@@ -1,0 +1,73 @@
+<section class="vh-120">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+              <!-- <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img src="assets/plezer.png"
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;margin: 50px;" />
+              </div> -->
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+  
+                  <form [formGroup]="notesform">
+  
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                      <span class="h1 fw-bold mb-0">Notes</span>
+                    </div>
+  
+                    <!-- <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Notes</h5> -->
+  
+
+                    <div class="form-outline mb-4">
+                        <input
+                          type="username"
+                          formControlName="username"
+                          id="form2Example17"
+                          class="form-control form-control-lg"
+                          placeholder="Username "
+                        />
+                        <!-- //error alert -->
+                        <div  class="alert mt-2 alert-danger" *ngIf="notesform.get('username')?.errors != null 
+                        && notesform.get('username')?.touched" >
+                          <p *ngIf="notesform.get('username')?.errors?.['forbiddenvalue'] "><i class="fa-solid fa-circle-exclamation"></i> username not allowed word [Admin or Adminstrator]</p>
+    
+                        </div>
+                      </div>
+
+
+                    <!-- <div class="form-outline mb-4">
+                      <input type="email" id="form2Example17" formControlName="email" class="form-control form-control-lg" placeholder="Email address"/>
+                    
+                      <div style="height: 50px;" class="alert mt-2 alert-danger" *ngIf="Loginform.get('email')?.errors != null 
+                      && Loginform.get('email')?.touched" >
+                        <p *ngIf="Loginform.get('email')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> email is required</p>
+                        <p *ngIf="Loginform.get('email')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> email must contains @ </p>
+                      </div>
+                    </div> -->
+  
+                    <!-- <div class="form-outline mb-4">
+                      <input type="password" id="form2Example27" formControlName="password" class="form-control form-control-lg" placeholder="Password"/>
+                    
+                      <div style="height: 50px;" class="alert mt-2 alert-danger" *ngIf="Loginform.get('password')?.errors != null 
+                      && Loginform.get('password')?.touched" >
+                        <p *ngIf="Loginform.get('password')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> password is required</p>
+                        <p *ngIf="Loginform.get('password')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> password must contains digits and letter [2-8]</p>
+                      </div>
+                    </div>
+   -->
+                    <!-- <div class="pt-1 mb-4">
+                      <button class="btn btn-dark btn-lg btn-block" [disabled]="Loginform.invalid" type="submit">Login</button>
+                    </div> -->
+
+                  </form>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

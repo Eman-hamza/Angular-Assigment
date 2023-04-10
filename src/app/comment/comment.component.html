@@ -1,0 +1,28 @@
+<!-- <p>comment works!</p> -->
+<div class="container py-5">
+    <!-- First Row [Prosucts]-->
+    <h2 class="font-weight-bold mb-2">From the Post's Comment </h2>
+    <!-- <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p> -->
+    <div class="row pb-5 mb-4">
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg" *ngFor="let info of CommentList">
+        <!-- Card-->
+        <div class="card shadow-sm">
+          <div class="card-body p-4">
+            <!-- <img src="assets/s.png" alt="" class="img-fluid d-block mx-auto mb-3"> -->
+            <h5> <a  class="text-dark">{{info.id}}</a></h5>
+            <h5 style="color:#a79073;">{{info.name}}</h5>
+            <h6> <a  class="text-dark">{{info.email}}</a></h6>
+            <p class="small text-muted font-italic">{{info.body}}</p>
+            <ul class="list-inline small">
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star-o text-success"></i></li>
+            </ul>
+            <!-- <button (click)="onselect(info)"></button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

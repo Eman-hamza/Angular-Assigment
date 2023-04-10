@@ -1,0 +1,131 @@
+<section style="height:max-content;">
+  <div class="container py-5 h-170">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img
+                src="assets/plezer.png"
+                alt="login form"
+                class="img-fluid"
+                style="border-radius: 1rem 0 0 1rem; margin: 50px"
+              />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+
+                <div *ngIf='errors' class="alert alert-danger m-2">
+                  {{errors}}
+                </div>
+                <form [formGroup]="registerform" (ngSubmit)='submitRegister()'>
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <span class="h1 fw-bold mb-0">Create An Account</span>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <!-- ngModel [(ngModel)]="usermodel.email" -->
+                    <input
+                      type="username"
+                      formControlName="username"
+                      id="form2Example17"
+                      class="form-control form-control-lg"
+                      placeholder="Username "
+                    />
+                    <!-- //error alert -->
+                    <div  class="alert mt-2 alert-danger" *ngIf="registerform.get('username')?.errors != null 
+                    && registerform.get('username')?.touched" >
+                      <p *ngIf="registerform.get('username')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> username is required</p>
+                      <p *ngIf="registerform.get('username')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> username must contains one Capital and small characters</p>
+                      <p *ngIf="registerform.get('username')?.errors?.['forbiddenvalue'] "><i class="fa-solid fa-circle-exclamation"></i> username not allowed word [Admin or Adminstrator]</p>
+
+                      <!-- <p>email must contians @</p> -->
+                    </div>
+                    <!-- <label class="form-label" for="form2Example17">Email address</label> -->
+                  </div>
+
+                  <!-- <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Create An Account </h5> -->
+<!-- ************************************************************************* -->
+                  <div class="form-outline mb-4">
+                    <!-- ngModel [(ngModel)]="usermodel.email" -->
+                    <input
+                      type="email"
+                      formControlName="email"
+                      id="form2Example17"
+                      class="form-control form-control-lg"
+                      placeholder="Email address"
+                    />
+                    <!-- //error alert -->
+                    <div style="height: 50px;" class="alert mt-2 alert-danger" *ngIf="registerform.get('email')?.errors != null 
+                    && registerform.get('email')?.touched" >
+                      <p *ngIf="registerform.get('email')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> email is required</p>
+                      <p *ngIf="registerform.get('email')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> email must contains @ </p>
+                      <!-- <p>email must contians @</p> -->
+                    </div>
+                    <!-- <label class="form-label" for="form2Example17">Email address</label> -->
+                  </div>
+<!-- ************************************************************************* -->
+                  <div class="form-outline mb-4">
+                    <!-- [(ngModel)]="usermodel.password" ngModel -->
+                    <input
+                      type="password"
+                      formControlName="password"
+                      id="form2Example27"
+                      class="form-control form-control-lg"
+                      placeholder="Password"
+                    />
+                    <div style="height: 50px;" class="alert mt-2 alert-danger" *ngIf="registerform.get('password')?.errors != null 
+                    && registerform.get('password')?.touched" >
+                      <p *ngIf="registerform.get('password')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> password is required</p>
+                      <p *ngIf="registerform.get('password')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> password must contains digits and letter [2-8]</p>
+                      <!-- <p>email must contians @</p> -->
+                    </div>
+                    <!-- <label class="form-label" for="form2Example27">Password</label> -->
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      type="password"
+                      formControlName="confirmpassword"
+                      id="form3Example4cdg"
+                      class="form-control form-control-lg"
+                      placeholder="Repeat Password"
+                    />
+                    <div style="height: 50px;" class="alert mt-2 alert-danger" *ngIf="registerform.get('confirmpassword')?.errors != null 
+                    && registerform.get('confirmpassword')?.touched" >
+                      <p *ngIf="registerform.get('confirmpassword')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> password is required</p>
+                      <p *ngIf="registerform.get('confirmpassword')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> password must contains digits and letter [2-8]</p>
+                      <p *ngIf="registerform.get('confirmpassword')?.errors?.['misMatch'] "><i class="fa-solid fa-circle-exclamation"></i> password Mismatch Confirm Password </p>
+ 
+                    </div>
+                  </div>
+                  <!-- [(ngModel)]="usermodel.soicalList" ngModel -->
+                  <div class="form-group">
+                    <select class="custom-select">
+                      <option>You hear about Us </option>
+                      <option *ngFor="let item of soicalList">
+                        {{ item }}
+                      </option>
+                    </select>
+                  </div>
+                  <div class=" mb-4">
+                    <button [disabled]="registerform.invalid" class="btn btn-light btn-lg btn-block" type="submit" style="color: white;">
+                      SingUp
+                    </button>
+                  </div>
+
+                  <!-- <a class="small text-muted" href="#!">Forgot password?</a> -->
+                  <p class="mb-5 pb-lg-2" style="color: #5760c0">
+                    Have already an account?
+                    <a [routerLink]="['/Login']" style="color: #393f81"
+                      >Login here</a
+                    >
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+
+<app-child (EventChild)="messageFromChild=$event"></app-child>
+   <div style="margin: 50px;">
+    <h3 > Product I Choose  : </h3>
+    <table class="table" style="border-radius: 20px;border: 2px dashed black;">
+      <thead >
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+          <th scope="col">Img</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let info of messageFromChild">
+          <td>{{info.ID}}</td>
+          <td>{{info.Name}}</td>
+          <td>{{info.Quantity}}</td>
+          <td>{{info.Price}}</td>
+          <td>
+            <img src={{info.Img}} alt="" style="width:70px;height: 70px;">
+          </td>
+        </tr>
+      </tbody>
+    </table>  
+   </div>

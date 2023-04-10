@@ -26,7 +26,13 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
+              "src/assets/star.png",
+              "src/assets/one.png",
+              "src/assets/two.png",
+              "src/assets/three.png",
+              "src/assets/four.png",
+              "src/assets/five.png",
+              "src/assets/six.png",
               "src/assets"
             ],
             "styles": [

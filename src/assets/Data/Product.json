@@ -1,0 +1,11 @@
+[
+{"ID": 1, "Name": "Product1","Quantity":10,"Price":3000,"Img":"assets/one.jpg","Discount":"10%"},
+{"ID": 2, "Name": "Product2","Quantity":2,"Price":5000,"Img":"assets/two.jpg","Discount":"25%"},
+{"ID": 3, "Name": "Product7","Quantity":3,"Price":3000,"Img":"assets/three.jpg","Discount":"50%"},
+{"ID": 4, "Name": "Product4","Quantity":5,"Price":8000,"Img":"assets/four.jpg","Discount":"15%"},
+{"ID": 5, "Name": "Product5","Quantity":2,"Price":5000,"Img":"assets/five.jpg","Discount":"NoDiscount"},
+{"ID": 6, "Name": "Product3","Quantity":4,"Price":7000,"Img":"assets/six.jpg","Discount":"NoDiscount"},
+{"ID": 7, "Name": "Product6","Quantity":1,"Price":2000,"Img":"assets/seven.jpg","Discount":"NoDiscount"},
+{"ID": 8, "Name": "Product8","Quantity":4,"Price":7000,"Img":"assets/ehight.jpg","Discount":"NoDiscount"}
+
+]

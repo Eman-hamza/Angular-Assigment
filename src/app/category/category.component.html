@@ -1,0 +1,47 @@
+<div class="container py-5">
+    <!-- First Row [Prosucts]-->
+    <h2 class="font-weight-bold mb-2">From the Shop</h2>
+    <!-- <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p> -->
+    <div class="row pb-5 mb-4">
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg" *ngFor="let info of CategoryList" >
+        <!-- Card-->
+        <div class="card shadow-sm">
+          <div class="card-body p-4"><img src="{{info.Img}}" alt="" class="img-fluid d-block mx-auto mb-3">
+            <h5> <a  class="text-dark" (click)="onselect(info)">{{info.Name}}</a></h5>
+            <p class="small text-muted font-italic">{{info.Description}}</p>
+            <ul class="list-inline small">
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star-o text-success"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  
+
+
+
+  <!-- ******************************************************** -->
+<!-- 
+  <table class="table" style="border-radius: 20px;border: 2px dashed black;">
+    <thead >
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let info of CategoryList">
+        <td>{{info.ID}}</td>
+        <td>{{info.Name}}</td>
+      </tr>
+    </tbody>
+  </table> -->

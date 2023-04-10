@@ -1,0 +1,50 @@
+<!-- <table class="table" style="border-radius: 20px;border: 2px dashed black;">
+    <thead >
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Img</th>
+        <th scope="col">Discount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let info of someProduct">
+        <div *ngIf="info.Discount!='NoDiscount'">
+            <td>{{info.ID}}</td>
+            <td>{{info.Name}}</td>
+            <td>{{info.Quantity}}</td>
+            <td>{{info.Price}}</td>
+            <td>{{info.Discount}}</td>
+            <td>
+              <img src={{info.Img}} alt="" style="width:70px;height: 70px;">
+            </td>
+        </div>
+      </tr>
+    </tbody>
+  </table> -->
+  <div class="container py-5">
+    <!-- First Row [Prosucts]-->
+    <!-- <h2 class="font-weight-bold mb-2">Discount :) </h2> -->
+    <!-- <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p> -->
+    <div class="row pb-5 mb-4">
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg" *ngFor="let info of someProduct" >
+        <!-- Card-->
+        <div class="card shadow-sm" *ngIf="info.Discount!='NoDiscount'">
+          <div class="card-body p-4"><img src="{{info.Img}}" alt="" class="img-fluid d-block mx-auto mb-3">
+            <h5> <a  class="text-dark">{{info.Name}}</a></h5>
+            <p class="small text-muted font-italic">{{info.Quantity}}</p>
+            <p class="small text-muted font-italic">{{info.Price}}</p>
+            <ul class="list-inline small">
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star-o text-success"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, ViewChild } from '@angular/core';
+import { ProductComponent } from './product/product.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Demo';
+  messageFromChild:any;
+  @ViewChild(ProductComponent) child!: ProductComponent;
+  ngAfterViewInit(){
+    // this.child.Product;
+  }
 }
